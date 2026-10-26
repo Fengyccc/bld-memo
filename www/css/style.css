@@ -43,6 +43,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 12px 20px;
+  /* 安卓沉浸式（边到边）状态栏：顶部加安全区，避免被系统状态栏遮挡 */
+  padding-top: calc(12px + var(--safe-area-inset-top, 0px));
   background: var(--card);
   border-bottom: 1px solid var(--border);
   position: sticky;
@@ -62,7 +64,7 @@ header h1 { font-size: 18px; margin: 0; }
 }
 .tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+main { max-width: 1000px; margin: 0 auto; padding: 20px; padding-bottom: calc(20px + var(--safe-area-inset-bottom, 0px)); }
 .view { display: none; }
 .view.active { display: block; }
 
