@@ -152,15 +152,15 @@
     var thead = el('thead');
     var hr = el('tr');
     hr.appendChild(el('th'));
-    alpha.forEach(function (b) { hr.appendChild(el('th', '', b)); });
+    alpha.forEach(function (a) { hr.appendChild(el('th', '', a)); }); // 列头 = 字母对第一个字母
     thead.appendChild(hr);
     table.appendChild(thead);
 
     var tbody = el('tbody');
-    alpha.forEach(function (a) {
+    alpha.forEach(function (b) {                 // 行 = 字母对第二个字母
       var tr = el('tr');
-      tr.appendChild(el('th', '', a));
-      alpha.forEach(function (b) {
+      tr.appendChild(el('th', '', b));
+      alpha.forEach(function (a) {               // 列 = 字母对第一个字母
         if (a === b) {
           var td0 = el('td', 'self');
           td0.textContent = '·';
